@@ -4,7 +4,7 @@
 #
 Name     : php-ahocorasick
 Version  : 0.0.7
-Release  : 2
+Release  : 3
 URL      : https://pecl.php.net//get/ahocorasick-0.0.7.tgz
 Source0  : https://pecl.php.net//get/ahocorasick-0.0.7.tgz
 Summary  : No detailed summary available
@@ -28,6 +28,7 @@ lib components for the php-ahocorasick package.
 
 %prep
 %setup -q -n ahocorasick-0.0.7
+cd %{_builddir}/ahocorasick-0.0.7
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -46,4 +47,4 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20180731/ahocorasick.so
+/usr/lib64/extensions/no-debug-non-zts-20190902/ahocorasick.so
