@@ -4,7 +4,7 @@
 #
 Name     : php-ahocorasick
 Version  : 0.0.7
-Release  : 13
+Release  : 14
 URL      : https://pecl.php.net//get/ahocorasick-0.0.7.tgz
 Source0  : https://pecl.php.net//get/ahocorasick-0.0.7.tgz
 Summary  : No detailed summary available
@@ -47,4 +47,4 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20200930/ahocorasick.so
+/usr/lib64/extensions/no-debug-non-zts-20210902/ahocorasick.so
