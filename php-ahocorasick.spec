@@ -4,13 +4,14 @@
 #
 Name     : php-ahocorasick
 Version  : 0.0.7
-Release  : 30
+Release  : 31
 URL      : https://pecl.php.net//get/ahocorasick-0.0.7.tgz
 Source0  : https://pecl.php.net//get/ahocorasick-0.0.7.tgz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-3.0 PHP-3.0
 Requires: php-ahocorasick-lib = %{version}-%{release}
+Requires: php-ahocorasick-license = %{version}-%{release}
 BuildRequires : buildreq-php
 
 %description
@@ -21,9 +22,18 @@ BuildRequires : buildreq-php
 %package lib
 Summary: lib components for the php-ahocorasick package.
 Group: Libraries
+Requires: php-ahocorasick-license = %{version}-%{release}
 
 %description lib
 lib components for the php-ahocorasick package.
+
+
+%package license
+Summary: license components for the php-ahocorasick package.
+Group: Default
+
+%description license
+license components for the php-ahocorasick package.
 
 
 %prep
@@ -39,6 +49,9 @@ phpize
 make  %{?_smp_mflags}
 
 %install
+mkdir -p %{buildroot}/usr/share/package-licenses/php-ahocorasick
+cp %{_builddir}/ahocorasick-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/php-ahocorasick/c09f9595f49b611cb4815dac18057910e5ff66b3
+cp %{_builddir}/ahocorasick-%{version}/LICENSE-PECL %{buildroot}/usr/share/package-licenses/php-ahocorasick/b7ee52f82385b0e3e793646d5fc716fa99720abe
 %make_install
 
 
@@ -47,4 +60,9 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20210902/ahocorasick.so
+/usr/lib64/extensions/no-debug-non-zts-20220829/ahocorasick.so
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/php-ahocorasick/b7ee52f82385b0e3e793646d5fc716fa99720abe
+/usr/share/package-licenses/php-ahocorasick/c09f9595f49b611cb4815dac18057910e5ff66b3
