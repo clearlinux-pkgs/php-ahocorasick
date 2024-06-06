@@ -7,7 +7,7 @@
 #
 Name     : php-ahocorasick
 Version  : 0.0.7
-Release  : 67
+Release  : 68
 URL      : https://pecl.php.net//get/ahocorasick-0.0.7.tgz
 Source0  : https://pecl.php.net//get/ahocorasick-0.0.7.tgz
 Summary  : No detailed summary available
